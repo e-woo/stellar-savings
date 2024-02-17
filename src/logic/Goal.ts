@@ -1,7 +1,8 @@
 export interface Goal {
     name: string;
     body: string;
-    amount: number;
+    targetAmount: number;
+    contributedAmount: number;
 }
 
 export function appendGoal(goal: Goal) {
@@ -9,10 +10,10 @@ export function appendGoal(goal: Goal) {
         goal.name = 'Unnamed goal';
     if (goal.body === '')
         goal.body = 'No description';
-    if (goal.amount === null)
-        goal.amount = 0;
-    else if (goal.amount < 0)
-        goal.amount = 0;
+    if (goal.targetAmount === null)
+        goal.targetAmount = 0;
+    else if (goal.targetAmount < 0)
+        goal.targetAmount = 0;
 
     const currentGoalsJson = (localStorage.getItem('goals'));
     const newGoalsArr = currentGoalsJson ? [...JSON.parse(currentGoalsJson), goal] : [goal];
@@ -40,10 +41,10 @@ export function editGoal(goal: Goal, index: number) {
         goal.name = 'Unnamed goal';
     if (!goal.body)
         goal.body = 'No description';
-    if (!goal.amount)
-        goal.amount = 0;
-    else if (goal.amount < 0)
-        goal.amount = 0;
+    if (!goal.targetAmount)
+        goal.targetAmount = 0;
+    else if (goal.targetAmount < 0)
+        goal.targetAmount = 0;
     
     const currentGoalsJson = (localStorage.getItem('goals'));
     if (!currentGoalsJson)

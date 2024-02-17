@@ -5,7 +5,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
     const [isEditing, setIsEditing] = useState(false);
     const [goalName, setGoalName] = useState(goal.name);
     const [goalBody, setGoalBody] = useState(goal.body);
-    const [goalAmount, setGoalAmount] = useState(goal.amount);
+    const [goalAmount, setGoalAmount] = useState(goal.targetAmount);
 
     const updateGoalName = (e: ChangeEvent) => {
         setGoalName((e.target as HTMLInputElement).value);
@@ -26,7 +26,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
     }
 
     const handleEdit = () => {
-        editGoal({name: goalName, body: goalBody, amount: goalAmount}, index);
+        editGoal({name: goalName, body: goalBody, targetAmount: goalAmount, contributedAmount: 0}, index);
         setIsEditing(false);
         onFinish();
     }
@@ -37,11 +37,11 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
                 isEditing ? <>
                     <input type='text' placeholder='Goal name...' className='w-full' defaultValue={goal.name} onChange={updateGoalName}/>
                     <input type='text' placeholder='Description...' defaultValue={goal.body} onChange={updateGoalBody}/>
-                    <input type='number' placeholder='Amount...' defaultValue={goal.amount} onChange={updateGoalAmount}/>
+                    <input type='number' placeholder='Amount...' defaultValue={goal.targetAmount} onChange={updateGoalAmount}/>
                 </> : <>
                     <h3 className='text-xl font-semibold'>{goal.name}</h3>
                     <p>{goal.body}</p>
-                    <p>{"$" + goal.amount}</p>
+                    <p>{`$${goal.contributedAmount} / $${goal.targetAmount}`}</p>
                 </>
             }
 

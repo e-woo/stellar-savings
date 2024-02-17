@@ -31,7 +31,7 @@ const GoalPrompt = ( {onSave} : {onSave: Function}) => {
             <div className='flex col-span-2 items-center justify-end'>
                 <div className='flex flex-col gap-2'>
                     <button className='bg-blue-500 py-2 px-4 rounded-xl' onClick={() => {
-                        appendGoal({name: goalName, body: goalBody, amount: goalAmount});
+                        appendGoal({name: goalName, body: goalBody, targetAmount: goalAmount, contributedAmount: 0});
                         onSave();
                 }}>Save</button>
                 </div>
