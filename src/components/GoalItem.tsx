@@ -16,7 +16,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
     }
 
     const updateGoalAmount = (e: ChangeEvent) => {
-        setGoalAmount((e.target as HTMLInputElement).value as unknown as number);
+        setGoalAmount(+(e.target as HTMLInputElement).value);
     }
 
     const handleDelete = () => {
