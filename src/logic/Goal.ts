@@ -10,9 +10,7 @@ export function appendGoal(goal: Goal) {
         goal.name = 'Unnamed goal';
     if (goal.body === '')
         goal.body = 'No description';
-    if (goal.targetAmount === null)
-        goal.targetAmount = 0;
-    else if (goal.targetAmount < 0)
+    if (goal.targetAmount === null || goal.targetAmount < 0)
         goal.targetAmount = 0;
 
     const currentGoalsJson = (localStorage.getItem('goals'));
@@ -41,9 +39,7 @@ export function editGoal(goal: Goal, index: number) {
         goal.name = 'Unnamed goal';
     if (!goal.body)
         goal.body = 'No description';
-    if (!goal.targetAmount)
-        goal.targetAmount = 0;
-    else if (goal.targetAmount < 0)
+    if (goal.targetAmount === null || goal.targetAmount < 0)
         goal.targetAmount = 0;
     
     const currentGoalsJson = (localStorage.getItem('goals'));

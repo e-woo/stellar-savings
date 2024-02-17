@@ -15,7 +15,7 @@ const GoalPrompt = ( {onSave} : {onSave: Function}) => {
     }
 
     const updateGoalAmount = (e: ChangeEvent) => {
-        setGoalAmount((e.target as HTMLInputElement).value as unknown as number);
+        setGoalAmount(+(e.target as HTMLInputElement).value);
     }
     
 
