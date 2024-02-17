@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Goal, appendGoal, fetchGoals } from '../logic/Goal';
+import { useState } from 'react';
+import { Goal, fetchGoals } from '../logic/Goal';
 import GoalItem from './GoalItem';
 import GoalPrompt from './GoalPrompt';
 

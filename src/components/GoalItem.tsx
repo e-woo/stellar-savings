@@ -39,8 +39,8 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
                     <input type='text' placeholder='Description...' defaultValue={goal.body} onChange={updateGoalBody}/>
                     <input type='number' placeholder='Amount...' defaultValue={goal.targetAmount} onChange={updateGoalAmount}/>
                 </> : <>
-                    <h3 className='text-xl font-semibold'>{goal.name}</h3>
-                    <p>{goal.body}</p>
+                    <h3 className='text-xl font-semibold text-wrap'>{goal.name}</h3>
+                    <p className='text-wrap'>{goal.body}</p>
                     <p>{`$${goal.contributedAmount} / $${goal.targetAmount}`}</p>
                 </>
             }
