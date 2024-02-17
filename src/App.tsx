@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='text-2xl'>test</div>
+      <div className='grid grid-cols-14 grid-flow-col h-[100vh]'>
+        <div className='col-span-4 bg-slate-500'>test</div>
+        <div className='col-span-6 bg-black'>test</div>
+        <div className='col-span-4 bg-slate-500'>test</div>
+      </div>
     </>
   )
 }
