@@ -49,22 +49,21 @@ const Transactions = () => {
         }
 
         setContributionAmount(newContributionAmount);
-        updateGoal(index, newContributionAmount);
+        updateGoal(index, amount);
     };
 
 
   return (
-    <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4'>
-        {currentGoal.name ? (
-            <div className='text-4xl font-bold text-center'>{currentGoal.name || 'Goal Name'}</div>
-        ): null}
+    <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5'>
             <form onSubmit={handleSubmit}>
-            <select onChange={handleGoalChange} className='mb-4 p-2 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
-                <option value="" disabled selected>Select a goal</option>
-                {goals.map((goal: any, index: number) => (
-                    <option key={index} value={index}>{goal.name}</option>
-                ))}
-            </select>
+                <div className="flex flex-row w-full gap-5 mb-5 justify-center text-center">
+                    <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white bg-transparent border-none select-none'>
+                        <option value="" disabled selected>Select a goal</option>
+                        {goals.map((goal: any, index: number) => (
+                            <option key={index} value={index}>{goal.name}</option>
+                        ))}
+                    </select>
+                </div>
                 <div className='flex flex-row w-full gap-5 mb-5'>
                     <select onChange={handleSelectChange} className='w-32 py-2 px-4 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
                         <option value="Deposit">Deposit</option>
