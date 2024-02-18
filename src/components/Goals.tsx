@@ -21,6 +21,7 @@ const Goals = () => {
           <GoalPrompt onSave={() => {
             setPromptVisible(false); 
             setGoals(fetchGoals());
+            location.reload();
           }}/>
         </li> : null}
       </ul>
