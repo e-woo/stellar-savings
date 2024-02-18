@@ -8,6 +8,7 @@ const Transactions = () => {
     const [selected, setSelected] = useState('Deposit');
     const [currentGoal, setCurrentGoal] = useState({name: '', body: '', targetAmount: 0, contributedAmount: 0});
     const [index, setIndex] = useState(0);
+    const [changedGoal, setChangedGoal] = useState(false);
 
     useEffect(() => {
         const goals = JSON.parse(localStorage.getItem('goals') || '[]');
@@ -21,6 +22,8 @@ const Transactions = () => {
         setIndex(selectedIndex);
         setCurrentGoal(goals[selectedIndex]);
         setContributionAmount(goals[selectedIndex].contributedAmount);
+        setChangedGoal(true);
+
     };
     
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,12 +73,14 @@ const Transactions = () => {
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row w-full gap-5 mb-5 justify-center text-center">
                     <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white border-none select-none bg-gray-900'>
-                        <option value="" disabled selected>Select a goal</option>
+                        <option value="" disabled selected>Select a Goal</option>
                         {goals.map((goal: any, index: number) => (
                             <option key={index} value={index}>{goal.name}</option>
                         ))}
                     </select>
                 </div>
+                {changedGoal ? 
+                <div>
                 <div className='flex flex-row w-full gap-5 mb-5'>
                     <select onChange={handleSelectChange} className='w-32 py-2 px-4 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
                         <option value="Deposit">Deposit</option>
@@ -91,8 +96,16 @@ const Transactions = () => {
                 <div className='flex justify-center'>
                     <button className='bg-secondary-400 hover:bg-secondary-500 py-2 px-4 rounded-xl'>Submit</button>
                 </div>
+                <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
+                </div>
+                
+                :
+                <div className="relative flex items-center justify-center min-h-96">
+                    <h1 className='text-3xl font-bold text-center text-white border-none select-none bg-gray-900'>Select a Goal to Get Started!</h1>
+            </div>}
+            
         </form>
-        <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
+        
         {hasTransactions ? <h2 className='text-2xl font-bold text-center'>
             Transactions
         </h2> : null}
