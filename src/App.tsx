@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Goals from './components/Goals'
-import './App.css'
 import Transactions from './components/Transactions'
+import './App.css'
 
 function App() {
+  const [selectedGoalName, setSelectedGoalName] = useState('');
 
   return (
     <>
@@ -12,7 +13,7 @@ function App() {
           <Goals/>
         </div>
         <div className='col-span-6 bg-black w-0 min-w-full'>Tree</div>
-        <div className='col-span-4 bg-slate-500 w-0 min-w-full'><Transactions></Transactions></div>
+        <div className='col-span-4 bg-slate-500 w-0 min-w-full'><Transactions/></div>
       </div>
     </>
   )
