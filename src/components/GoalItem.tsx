@@ -64,7 +64,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
             </div>
             {goal.contributedAmount === 0 ? null : <span className='bg-secondary-100 h-2' style={{width: `${Math.round(goal.contributedAmount * 100 / goal.targetAmount)}%`}}/>
             }
-            {goal.contributedAmount != goal.targetAmount ? null : <img 
+            {goal.contributedAmount != goal.targetAmount || isEditing ? null : <img 
             className="absolute top-[2vh] left-[17.25vw] h-5 w-5" 
             src={star}/> }
             
