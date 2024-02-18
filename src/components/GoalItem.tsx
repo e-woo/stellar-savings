@@ -33,7 +33,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
 
     return (
         <div className='relative flex flex-col bg-gray-800 rounded-xl overflow-hidden border-4 border-primary-400'>
-            <div className='grid grid-cols-6 p-3'>
+            <div className='grid grid-cols-6 p-3 gap-4'>
                 <div className='col-span-4 flex flex-col gap-2'> {
                     isEditing ? <>
                         <input type='text' placeholder='Goal name...' className='w-full bg-gray-700 py-1 px-3 rounded-xl' defaultValue={goal.name} onChange={updateGoalName}/>
