@@ -1,5 +1,6 @@
 import React from 'react';
 import rocket from '../assets/rocket.gif';
+
 function ShowTree() {
     return (
         <div className="relative flex items-center justify-center min-h-96">
