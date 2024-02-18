@@ -10,7 +10,7 @@ const TipBox = () => {
         ["📖 Definition:", "An entrepreneur is someone who starts their own business or takes financial risks to make a profit."],
         ["💡 Tip:", "Make a plan to budget your money!"],
         ["🤔 Did you know?", "Money has been a concept for over 3000 years, with the first coins used in ~600 BCE."],
-        ["📖 Definition:", "Investing is to use your money to buy something with the hope of it growing in value over time."],
+        ["📖 Definition:", "Investing is using your money to buy something with the hope of it growing in value over time."],
         ["💡 Tip:", "Always save a portion of the money you receive as gifts!"],
         ["🤔 Did you know?", "The first ATM was installed by Barclays Bank in London in 1967."],
         ["📖 Definition:", "Budgeting is making a plan for how you will spend or save your money."],
@@ -35,7 +35,7 @@ const TipBox = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % tips.length);
-        }, 20000);
+        }, 15000);
 
         return () => clearInterval(intervalId);
     }, []);
