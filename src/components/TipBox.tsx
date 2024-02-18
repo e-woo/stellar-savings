@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TipBox = () => {
     const tips = [
-        "dfjlksj fsjlk dfdjlk fjlfkd fldsj ldfs jk (tip 1)",
+        "dfjlksj fsjlk dfdjlk fjlfkd fkljldsj ldfs jk (tip 1)",
         "ads adfsljk aflds jkafdsljk dafl kjad (tip 2)",
         "q pepi eqw iopweqo ipewqp oiqweop iqew (tip 3)",
         "jajls l kjdl adksal dkssadlkjdaskljadlks (tip 4)",
