@@ -38,6 +38,8 @@ const Transactions = () => {
         e.preventDefault();
         console.log('submitted');
         const amount = parseFloat(inputValue.slice(1));
+        if (!amount)
+            return;
         let newContributionAmount = contributionAmount;
 
         if(selected === 'Withdraw'){

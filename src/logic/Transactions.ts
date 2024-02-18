@@ -1,4 +1,6 @@
 export function updateGoal(index: number, addAmount: number): void {
+    if (addAmount == 0)
+        return;
     const goals = JSON.parse(localStorage.getItem('goals') || '[]');
     let completed = JSON.parse(localStorage.getItem('completed') || '0');
     let transactionCount = JSON.parse(localStorage.getItem('transactionCount') || '0');
@@ -11,10 +13,9 @@ export function updateGoal(index: number, addAmount: number): void {
         localStorage.setItem('completed', JSON.stringify(completed));
     }
 
-    if (addAmount != 0) {
-        transactionCount += 1;
-        localStorage.setItem('transactionCount', JSON.stringify(transactionCount));
-    }
+    transactionCount += 1;
+    localStorage.setItem('transactionCount', JSON.stringify(transactionCount));
+    
 
     localStorage.setItem('goals', JSON.stringify(goals));
 
