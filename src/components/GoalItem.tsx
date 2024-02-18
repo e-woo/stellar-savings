@@ -26,7 +26,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
     }
 
     const handleEdit = () => {
-        editGoal({name: goalName, body: goalBody, targetAmount: goalAmount, contributedAmount: 0}, index);
+        editGoal({name: goalName, body: goalBody, targetAmount: goalAmount, contributedAmount: goal.contributedAmount}, index);
         setIsEditing(false);
         onFinish();
     }
