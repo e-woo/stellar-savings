@@ -22,7 +22,9 @@ export function getTransactions(): Array<Transaction> {
     const currentTransactionsJson = localStorage.getItem('transactions');
     if (!currentTransactionsJson)
         return [];
-    return JSON.parse(currentTransactionsJson);
+    const currentTransactionsArr = JSON.parse(currentTransactionsJson);
+    currentTransactionsArr.reverse();
+    return currentTransactionsArr;
 }
 
 
