@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { updateGoal } from '../logic/Transactions';
+import Log from './Log';
 
 const Transactions = () => {
     const [inputValue, setInputValue] = useState('');
@@ -54,7 +55,7 @@ const Transactions = () => {
 
 
   return (
-    <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5'>
+    <div className='flex items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5 h-[90vh]'>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row w-full gap-5 mb-5 justify-center text-center">
                     <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white border-none select-none bg-gray-900'>
@@ -80,14 +81,8 @@ const Transactions = () => {
                     <button className='bg-secondary-400 hover:bg-secondary-500 py-2 px-4 rounded-xl'>Submit</button>
                 </div>
         </form>
-        <div className='font-bold text-lg'>
-            History
-        </div>
-        <div>
-            <div className='flex justify-center items-center'>Date</div>
-            <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
-        </div>
-            
+        <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
+        <Log currentGoal={currentGoal.name}/>
     </div>
   )
 }

@@ -1,22 +1,31 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { getTransactions } from '../logic/Transactions';
+import TransactionItem from './TransactionItem';
 
-const Log = () => {
-    useEffect(() => {
-        const goals = JSON.parse(localStorage.getItem('goals') || '[]');
-        console.log(goals);
-    }, []);
+const Log = ( { currentGoal } : { currentGoal: string }) => {
 
-    return (
-        <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5'>
-        <div className='font-bold text-lg'>
-            Transaction Log
-        </div>
-        <div className='flex flex-row justify-evenly w-full'>
-            <div className='flex justify-center items-center'>Time: </div>
-            <div className='flex justify-center items-center'>Amount: </div>
-        </div>
+    const [transactions] = useState(getTransactions());
+    let hasTransactions = false;
+    for (let i = 0; i < transactions.length; i++) {
+        if (transactions[i].goal === currentGoal) {
+            hasTransactions = true;
+            break;
+        }
+    }
+
+    return (<>
+        {hasTransactions ? <h2 className='text-2xl font-bold text-center'>
+            Transactions
+        </h2> : null}
+            <ul className='px-4 flex flex-col max-h-[40vh] items-center overflow-y-scroll'>
+            {
+                transactions.map((transaction, index) => { return transaction.goal === currentGoal ? 
+                <li key={index} className='w-full py-2'>
+                    <TransactionItem transaction={transaction}/>
+                </li> : null})
+            }
+            </ul></>
             
-    </div>
   )
 }
 

@@ -18,8 +18,15 @@ export function updateGoal(index: number, addAmount: number): void {
     localStorage.setItem('transactions', JSON.stringify(newTransactionsArr));
 }
 
+export function getTransactions(): Array<Transaction> {
+    const currentTransactionsJson = localStorage.getItem('transactions');
+    if (!currentTransactionsJson)
+        return [];
+    return JSON.parse(currentTransactionsJson);
+}
 
-interface Transaction {
+
+export interface Transaction {
     time: string;
     amount: number;
     goal: string;

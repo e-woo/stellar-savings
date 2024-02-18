@@ -17,7 +17,6 @@ function App() {
         
         <div className='col-span-4 w-0 min-w-full'>
         <div><Transactions></Transactions></div>
-        <div><Log></Log></div>
           </div>
       </div>
     </>
