@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TipBox = () => {
     const tips = [
@@ -31,6 +31,14 @@ const TipBox = () => {
         const nextIndex = (currentIndex + 1) % tips.length;
         setCurrentIndex(nextIndex);
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % tips.length);
+        }, 20000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <div className="flex p-1 gap-8 rounded-xl border-4 border-primary-400 ml-8 my-8">
