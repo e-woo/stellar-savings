@@ -49,7 +49,7 @@ const Transactions = () => {
         }
 
         setContributionAmount(newContributionAmount);
-        updateGoal(index, amount);
+        updateGoal(index, selected === 'Withdraw' ? -amount : amount);
     };
 
 
