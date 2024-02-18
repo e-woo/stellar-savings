@@ -57,7 +57,7 @@ const Transactions = () => {
     <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5'>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row w-full gap-5 mb-5 justify-center text-center">
-                    <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white bg-transparent border-none select-none'>
+                    <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white border-none select-none bg-gray-900'>
                         <option value="" disabled selected>Select a goal</option>
                         {goals.map((goal: any, index: number) => (
                             <option key={index} value={index}>{goal.name}</option>
@@ -71,7 +71,7 @@ const Transactions = () => {
                     </select>
                     <input 
                         placeholder='$' 
-                        className='p-2 w-44 text-sm w-full bg-gray-700 py-1 px-3 rounded-xl font-bold outline-0 focus:bg-gray-800 placeholder:text-gray-400 text-black'
+                        className='p-2 w-44 text-sm w-full bg-gray-700 py-1 px-3 rounded-xl font-bold outline-0 focus:bg-gray-800 placeholder:text-gray-400'
                         value={inputValue}
                         onChange={handleInputChange}
                     />
