@@ -14,8 +14,9 @@ function App() {
           <Goals/>
         </div>
 
-        <div className='col-span-6 w-0 min-w-full'>
-          <div className=''><TipBox></TipBox></div>
+        <div className='col-span-6 w-0 min-w-full flex flex-col'>
+          <div className='flex-1'><Tree /></div>
+          <div><TipBox /></div>
         </div>
         
         <div className='col-span-4 w-0 min-w-full'>
