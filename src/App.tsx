@@ -23,10 +23,13 @@ function App() {
             <Goals />
           </div>
 
-          <div className='col-span-6 w-0 min-w-full flex flex-col'>
-            <div className='p-8'><img src='src/assets/logo.png' alt='Logo'></img></div>
-            <div className='flex-1 flex justify-center items-center'><img className='w-72 h-72 bounce' src='src/assets/rocket.gif' alt='Rocket'></img></div>
-            <div><TipBox /></div>
+          <div className='col-span-6 w-0 min-w-full'>
+            <div className='h-[90vh] grid grid-rows-7 grid-flow-row my-8'>
+              <div className='p-8 row-span-1'><img src='src/assets/logo.png' alt='Logo'></img></div>
+              <div className='flex-1 flex justify-center items-center row-span-5'><img className='w-72 h-72 bounce' src='src/assets/rocket.gif' alt='Rocket'></img></div>
+              <div className='row-span-1 flex flex-row'><TipBox /></div>
+            </div>
+
           </div>
           
           <div className='col-span-4 w-0 min-w-full'>
