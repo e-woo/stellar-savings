@@ -1,11 +1,11 @@
 import React from 'react';
-import treeimg from '../assets/treePlaceholder.png';
+import rocket from '../assets/rocket.gif';
 function ShowTree() {
     return (
         <div className="relative flex items-center justify-center min-h-96">
             <img 
             className="animate-bounce absolute bottom-0 w-1/3 h-auto" 
-            src={treeimg}/>
+            src={rocket}/>
         </div>
     );
 }

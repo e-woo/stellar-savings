@@ -22,7 +22,7 @@ function App() {
 
           <div className='col-span-6 w-0 min-w-full flex flex-col'>
             <div className='p-8'><img src='src/assets/logo.png' alt='Logo'></img></div>
-            <div className='flex-1'><Tree /></div>
+            <div className='flex-1 flex justify-center items-center'><img className='w-72 h-72' src='src/assets/rocket.gif' alt='Rocket'></img></div>
             <div><TipBox /></div>
           </div>
           
