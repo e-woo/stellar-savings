@@ -3,7 +3,6 @@ import Goals from './components/Goals'
 import Transactions from './components/Transactions'
 import Tree from './components/Tree'
 import TipBox from './components/TipBox'
-import Log from './components/Log'
 import './App.css'
 
 function App() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { updateGoal } from '../logic/Transactions';
-import Log from './Log';
+import { getTransactions, updateGoal } from '../logic/Transactions';
+import TransactionItem from './TransactionItem';
 
 const Transactions = () => {
     const [inputValue, setInputValue] = useState('');
@@ -51,7 +51,18 @@ const Transactions = () => {
 
         setContributionAmount(newContributionAmount);
         updateGoal(index, selected === 'Withdraw' ? -amount : amount);
+        setTransactions(getTransactions());
+        
     };
+
+    const [transactions, setTransactions] = useState(getTransactions());
+    let hasTransactions = false;
+    for (let i = 0; i < transactions.length; i++) {
+        if (transactions[i].goal === currentGoal.name) {
+            hasTransactions = true;
+            break;
+        }
+    }
 
 
   return (
@@ -82,7 +93,17 @@ const Transactions = () => {
                 </div>
         </form>
         <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
-        <Log currentGoal={currentGoal.name}/>
+        {hasTransactions ? <h2 className='text-2xl font-bold text-center'>
+            Transactions
+        </h2> : null}
+            <ul className='px-4 flex flex-col max-h-[40vh] items-center overflow-y-scroll'>
+            {
+                transactions.map((transaction, index) => { return transaction.goal === currentGoal.name ? 
+                <li key={index} className='w-full py-2'>
+                    <TransactionItem transaction={transaction}/>
+                </li> : null})
+            }
+            </ul>
     </div>
   )
 }
