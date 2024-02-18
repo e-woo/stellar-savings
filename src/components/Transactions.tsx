@@ -49,7 +49,7 @@ const Transactions = () => {
         }
 
         setContributionAmount(newContributionAmount);
-        updateGoal(index, newContributionAmount);
+        updateGoal(index, amount);
     };
 
 
