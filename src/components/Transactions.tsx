@@ -3,7 +3,7 @@ import { updateGoal } from '../logic/Transactions';
 
 const Transactions = () => {
     const [inputValue, setInputValue] = useState('');
-    const [addition, setAddition] = useState(0);
+    const [contributionAmount, setContributionAmount] = useState(0);
     const [selected, setSelected] = useState('Deposit');
     const [currentGoal, setCurrentGoal] = useState({name: '', body: '', targetAmount: 0, contributedAmount: 0});
     const [index, setIndex] = useState(0);
@@ -19,7 +19,7 @@ const Transactions = () => {
         const selectedIndex = parseInt(e.target.value, 10);
         setIndex(selectedIndex);
         setCurrentGoal(goals[selectedIndex]);
-        setAddition(goals[selectedIndex].contributedAmount);
+        setContributionAmount(goals[selectedIndex].contributedAmount);
     };
     
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,31 +34,33 @@ const Transactions = () => {
         e.preventDefault();
         console.log('submitted');
         const amount = parseFloat(inputValue.slice(1));
-        let newAddition = addition;
+        let newContributionAmount = contributionAmount;
 
         if(selected === 'Withdraw'){
-            if(addition >= amount){
-                newAddition -= amount;
+            if(contributionAmount >= amount){
+                newContributionAmount -= amount;
             }else{
                 alert('You do not have enough funds');
                 return;
             }
         }
         else{
-            newAddition += amount;
+            newContributionAmount += amount;
         }
 
-        setAddition(newAddition);
-        updateGoal(index, newAddition);
+        setContributionAmount(newContributionAmount);
+        updateGoal(index, newContributionAmount);
     };
 
 
   return (
     <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4'>
-    
-        <div className='text-4xl font-bold text-center'>{currentGoal.name || 'Goal Name'}</div>
+        {currentGoal.name ? (
+            <div className='text-4xl font-bold text-center'>{currentGoal.name || 'Goal Name'}</div>
+        ): null}
             <form onSubmit={handleSubmit}>
             <select onChange={handleGoalChange} className='mb-4 p-2 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
+                <option value="" disabled selected>Select a goal</option>
                 {goals.map((goal: any, index: number) => (
                     <option key={index} value={index}>{goal.name}</option>
                 ))}
@@ -84,7 +86,7 @@ const Transactions = () => {
         </div>
         <div>
             <div className='flex justify-center items-center'>Date</div>
-            <div className='flex justify-center items-center'>Amount: ${addition}/${currentGoal.targetAmount}</div>
+            <div className='flex justify-center items-center'>Amount: ${contributionAmount}/${currentGoal.targetAmount}</div>
         </div>
             
     </div>
