@@ -36,7 +36,7 @@ const TipBox = () => {
         <div className="flex p-1 gap-8 rounded-xl border-4 border-primary-400 ml-8 my-8">
             <span><b>{tips[currentIndex][0]}</b> {tips[currentIndex][1]}</span>
             <div className="flex flex-grow justify-end items-center">
-                <button className="w-6 h-6 rounded-xl bg-secondary-500 hover:bg-secondary-600" onClick={getNextTip}>
+                <button className="w-6 h-full rounded-xl bg-secondary-500 hover:bg-secondary-600 select-none" onClick={getNextTip}>
                     →
                 </button>
             </div>
