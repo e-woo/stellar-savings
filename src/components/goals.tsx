@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Goal, appendGoal, fetchGoals } from '../logic/Goal';
+import { useState } from 'react';
+import { Goal, fetchGoals } from '../logic/Goal';
 import GoalItem from './GoalItem';
 import GoalPrompt from './GoalPrompt';
 
@@ -24,7 +24,7 @@ const Goals = () => {
           }}/>
         </li> : null}
       </ul>
-      <button onClick={() => setPromptVisible(true)} className='py-4 mx-8 rounded-xl bg-red-400'>Add goal</button>
+      <button onClick={() => setPromptVisible(true)} className='py-4 mx-8 rounded-xl bg-secondary-500 hover:bg-secondary-600'>Add goal</button>
     </div>
   )
 }

@@ -5,7 +5,7 @@ export interface Goal {
     contributedAmount: number;
 }
 
-export function appendGoal(goal: Goal) {
+export function appendGoal(goal: Goal) : void {
     if (goal.name === '')
         goal.name = 'Unnamed goal';
     if (goal.body === '')
@@ -18,14 +18,14 @@ export function appendGoal(goal: Goal) {
     localStorage.setItem('goals', JSON.stringify(newGoalsArr));
 }
 
-export function fetchGoals() {
+export function fetchGoals() : Array<Goal> {
     const currentGoalsJson = (localStorage.getItem('goals'));
     if (!currentGoalsJson)
         return [];
     return JSON.parse(currentGoalsJson);
 }
 
-export function deleteGoal(index: number) {
+export function deleteGoal(index: number) : void {
     const currentGoalsJson = (localStorage.getItem('goals'));
     if (!currentGoalsJson)
         return;
@@ -34,7 +34,7 @@ export function deleteGoal(index: number) {
     localStorage.setItem('goals', JSON.stringify(goalsArr));
 }
 
-export function editGoal(goal: Goal, index: number) {
+export function editGoal(goal: Goal, index: number) : void {
     if (!goal.name)
         goal.name = 'Unnamed goal';
     if (!goal.body)
