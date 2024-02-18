@@ -39,13 +39,13 @@ function App() {
       </div>
 
       {/* Planets (absolute positioned) */}
-      <div className='absolute top-[20vh] left-[63vw]'>
+      <div className='absolute top-[20vh] left-[63vw] select-none'>
         <Planet1 />
       </div>
-      <div className='absolute top-[40vh] left-[30vw]'>
+      <div className='absolute top-[40vh] left-[30vw] select-none'>
         <Planet2 />
       </div>
-      <div className='absolute top-[63vh] left-[54vw]'>
+      <div className='absolute top-[63vh] left-[54vw] select-none'>
         <Planet3 />
       </div>
     </>
