@@ -61,7 +61,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
                     
                 </div>
             </div>
-            {goal.contributedAmount === 0 ? null : <span className='bg-secondary-600 h-2' style={{width: `${Math.round(goal.contributedAmount * 100 / goal.targetAmount)}%`}}/>
+            {goal.contributedAmount === 0 ? null : <span className='bg-secondary-100 h-2' style={{width: `${Math.round(goal.contributedAmount * 100 / goal.targetAmount)}%`}}/>
             }
         </div>
     )
