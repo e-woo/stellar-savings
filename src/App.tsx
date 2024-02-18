@@ -15,6 +15,7 @@ function App() {
         </div>
 
         <div className='col-span-6 w-0 min-w-full flex flex-col'>
+          <div className='p-8'><img src='src/assets/logo.png'></img></div>
           <div className='flex-1'><Tree /></div>
           <div><TipBox /></div>
         </div>
