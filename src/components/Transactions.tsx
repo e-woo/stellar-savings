@@ -66,7 +66,7 @@ const Transactions = () => {
 
 
   return (
-    <div className='flex items-center flex-col gap-5 rounded-xl border-primary-400 border-4 m-8 p-5 h-[90vh]'>
+    <div className='flex items-center flex-col gap-5 rounded-xl border-primary-400 bg-gray-900 border-4 m-8 p-5 h-[90vh]'>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row w-full gap-5 mb-5 justify-center text-center">
                     <select onChange={handleGoalChange} className='text-3xl font-bold text-center text-white border-none select-none bg-gray-900'>
