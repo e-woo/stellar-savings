@@ -3,6 +3,8 @@
 </h1>
 <p align="center">
   The first iteration of Stellar Savings, a personal finance web application designed for children, with a focus on financial literacy and education.
+  <br><br>
+  Designed and created @ <a href="https://calgaryhacks.ca/">CalgaryHacks 2024</a>.
 </p>
 
 ## 🛠 Setup
