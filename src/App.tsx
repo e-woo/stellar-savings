@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Goals from './components/Goals'
 import Transactions from './components/Transactions'
 import Tree from './components/Tree'
+import TipBox from './components/TipBox'
 import Log from './components/Log'
 import './App.css'
 
@@ -13,12 +14,12 @@ function App() {
         <div className='col-span-4 w-0 min-w-full'>
           <Goals/>
         </div>
-        <div className='col-span-6 w-0 min-w-full'><Tree></Tree></div>
+        <div className='col-span-6 w-0 min-w-full'><TipBox></TipBox></div>
         
         <div className='col-span-4 w-0 min-w-full'>
-        <div><Transactions></Transactions></div>
-        <div><Log></Log></div>
-          </div>
+          <div><Transactions></Transactions></div>
+          <div><Log></Log></div>
+        </div>
       </div>
     </>
   )
