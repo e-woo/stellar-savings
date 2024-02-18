@@ -24,8 +24,8 @@ function App() {
           </div>
 
           <div className='col-span-6 w-0 min-w-full flex flex-col'>
-            <div className='p-8'><img src='src/assets/logo.png' alt='Logo'></img></div>
-            <div className='flex-1 flex justify-center items-center'><img className='w-72 h-72 bounce' src='src/assets/rocket.gif' alt='Rocket'></img></div>
+            <div className='p-8 select-none'><img src='src/assets/logo.png' alt='Logo'></img></div>
+            <div className='flex-1 flex justify-center items-center select-none'><img className='w-72 h-72 bounce' src='src/assets/rocket.gif' alt='Rocket'></img></div>
             <div><TipBox /></div>
           </div>
           
@@ -36,13 +36,13 @@ function App() {
       </div>
 
       {/* Planets (absolute positioned) */}
-      <div className='absolute top-[20vh] left-[63vw]'>
+      <div className='absolute top-[20vh] left-[63vw] select-none'>
         <Planet1 />
       </div>
-      <div className='absolute top-[40vh] left-[30vw]'>
+      <div className='absolute top-[40vh] left-[30vw] select-none'>
         <Planet2 />
       </div>
-      <div className='absolute top-[63vh] left-[54vw]'>
+      <div className='absolute top-[63vh] left-[54vw] select-none'>
         <Planet3 />
       </div>
     </>
