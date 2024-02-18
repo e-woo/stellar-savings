@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div className='video-background'>
-        <video autoPlay loop muted className='video'>
+        <video autoPlay loop muted className='video h-full w-full object-cover'>
           <source src={SpaceVideo} type='video/mp4' />
           Your browser does not support the video tag.
         </video>
