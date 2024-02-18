@@ -2,8 +2,14 @@
   Stellar Savings
 </h1>
 <p align="center">
-  The first iteration of Stellar Savings, a personal finance web application designed for children, with a focus on financial literacy and education.
-  <br><br>
+  A personal finance web application designed for children, with a focus on financial literacy and education.
+</p>
+
+<!-- image -->
+<span align="center">
+  <img src="https://raw.githubusercontent.com/e-woo/stellar-savings/main/demo-image.png?token=GHSAT0AAAAAACMGMW5EJJTLAKP66M3ZW3PQZOSKJVQ" alt="Stellar Savings demo image" width="100%">
+</span>
+<p align="center">
   Designed and created @ <a href="https://calgaryhacks.ca/">CalgaryHacks 2024</a>.
 </p>
 
@@ -47,3 +53,13 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## 🎨 Colors
+
+| Color                                                                   | Hex/RGB                   |
+| ----------------------------------------------------------------------- | ------------------------- |
+| ![#000000](https://placehold.co/15x15/000000/000000.png) Background     | `#000000 (0, 0, 0)`     |
+| ![#b787f5](https://placehold.co/15x15/b787f5/b787f5.png) Primary        | `#b787f5 (183, 135, 245)` |
+| ![#c951e7](https://placehold.co/15x15/c951e7/c951e7.png) Secondary        | `#c951e7 (201, 81, 231)` |
+| ![#ffffff](https://placehold.co/15x15/ffffff/ffffff.png) Text         | `#ffffff (255, 255, 255)` |
+| ![#374151](https://placehold.co/15x15/374151/374151.png) Accent         | `#374151 (55, 65, 81)` |

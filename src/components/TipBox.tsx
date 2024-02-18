@@ -22,7 +22,16 @@ const TipBox = () => {
         ["📖 Definition:", "A stock is a share of ownership in a company that can be bought and sold on the stock market."],
         ["💡 Tip:", "Ask questions if you don't understand something about money or finances."],
         ["🤔 Did you know?", "The most expensive US bill ever printed was worth $100000, and it featured the face of President Woodrow Wilson!"],
-        ["📖 Definition:", "Debt is money that is owed to someone else, often with interest."]
+        ["📖 Definition:", "Debt is money that is owed to someone else, often with interest."],
+        ["💡 Tip:", "Consider the value of an item before making a purchase."],
+        ["🤔 Did you know?", "The first paper money was used in China over 1000 years ago!"],
+        ["📖 Definition:", "A loan is money that is borrowed and must be repaid, often with interest."],
+        ["💡 Tip:", "Be careful with your personal information to avoid identity theft!"],
+        ["🤔 Did you know?", "The first credit card was introduced in 1950 by Diners Club, and it was made of cardboard!"],
+        ["📖 Definition:", "Interest is the cost of borrowing money, or the amount of money earned on an investment."],
+        ["💡 Tip:", "Consider the long-term impact of your financial decisions."],
+        ["🤔 Did you know?", "The most expensive coin ever sold was a 1794 Flowing Hair Silver Dollar, which was auctioned for over $10 million!"],
+        ["📖 Definition:", "Taxes are mandatory contributions imposed by governments to fund public services and infrastructure."]
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,8 +50,10 @@ const TipBox = () => {
     }, []);
 
     return (
-        <div className="flex p-1 gap-8 rounded-xl border-4 bg-gray-900 border-primary-400 ml-8 my-8">
-            <span><b>{tips[currentIndex][0]}</b> {tips[currentIndex][1]}</span>
+        <div className="flex p-1 gap-8 rounded-xl border-4 bg-gray-900 border-primary-400 ml-8 w-full">
+            <span>
+                <b>{tips[currentIndex][0]}</b> {tips[currentIndex][1]}
+            </span>
             <div className="flex flex-grow justify-end items-center">
                 <button className="w-6 h-full rounded-xl bg-secondary-500 hover:bg-secondary-600 select-none" onClick={getNextTip}>
                     →
