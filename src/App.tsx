@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Goals from './components/Goals'
 import Transactions from './components/Transactions'
+import Tree from './components/Tree'
 import './App.css'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <div className='col-span-4 w-0 min-w-full'>
           <Goals/>
         </div>
-        <div className='col-span-6 w-0 min-w-full'>Tree</div>
+        <div className='col-span-6 w-0 min-w-full'><Tree></Tree></div>
         <div className='col-span-4 w-0 min-w-full'><Transactions></Transactions></div>
       </div>
     </>
