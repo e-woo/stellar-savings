@@ -1,31 +1,38 @@
-import { useState } from 'react'
-import Goals from './components/Goals'
-import Transactions from './components/Transactions'
-import Tree from './components/Tree'
-import TipBox from './components/TipBox'
-import './App.css'
+import { useState } from 'react';
+import Goals from './components/Goals';
+import Transactions from './components/Transactions';
+import Tree from './components/Tree';
+import TipBox from './components/TipBox';
+import './App.css';
+import SpaceVideo from './assets/Space Flight Loop.mp4';
 
 function App() {
-
   return (
     <>
-      <div className='grid grid-cols-14 grid-flow-col h-[100vh] bg-gray-900 text-white overflow-hidden overscroll-none'>
-        <div className='col-span-4 w-0 min-w-full'>
-          <Goals/>
-        </div>
+      <div className='video-background'>
+        <video autoPlay loop muted className='video'>
+          <source src={SpaceVideo} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className='col-span-6 w-0 min-w-full flex flex-col'>
-          <div className='p-8'><img src='src/assets/logo.png'></img></div>
-          <div className='flex-1'><Tree /></div>
-          <div><TipBox /></div>
-        </div>
-        
-        <div className='col-span-4 w-0 min-w-full'>
-        <div><Transactions></Transactions></div>
+        <div className='grid grid-cols-14 grid-flow-col h-[100vh] bg-opacity-0 bg-gray-900 text-white overflow-hidden overscroll-none'>
+          <div className='col-span-4 w-0 min-w-full'>
+            <Goals />
           </div>
+
+          <div className='col-span-6 w-0 min-w-full flex flex-col'>
+            <div className='p-8'><img src='src/assets/logo.png' alt='Logo'></img></div>
+            <div className='flex-1'><Tree /></div>
+            <div><TipBox /></div>
+          </div>
+          
+          <div className='col-span-4 w-0 min-w-full'>
+            <div><Transactions /></div>
+          </div>
+        </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
