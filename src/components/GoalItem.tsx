@@ -24,6 +24,7 @@ const GoalItem = ({ goal, onFinish, index } : { goal: Goal, onFinish: Function, 
         deleteGoal(index);
         setIsEditing(false);
         onFinish();
+        location.reload();
     }
 
     const handleEdit = () => {
