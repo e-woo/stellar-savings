@@ -54,29 +54,29 @@ const Transactions = () => {
 
 
   return (
-    <div className='flex justify-center items-center border-4 flex-col gap-5'>
+    <div className='flex justify-center items-center flex-col gap-5 rounded-xl border-primary-400 border-4'>
     
-        <div className='font-bold text-lg'>{currentGoal.name || 'Goal Name'}</div>
+        <div className='text-4xl font-bold text-center'>{currentGoal.name || 'Goal Name'}</div>
             <form onSubmit={handleSubmit}>
-            <select onChange={handleGoalChange} className='mb-4 p-2 text-sm font-bold outline-0 border-2 bg-green-50 border-black focus:ring-black focus:ring-1 rounded-md text-black'>
+            <select onChange={handleGoalChange} className='mb-4 p-2 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
                 {goals.map((goal: any, index: number) => (
                     <option key={index} value={index}>{goal.name}</option>
                 ))}
             </select>
                 <div className='flex flex-row w-full gap-5 mb-5'>
-                    <select onChange={handleSelectChange} className='p-2 w-32 text-sm font-bold outline-0 border-2 bg-green-50 border-black focus:ring-black focus:ring-1 rounded-md placeholder:text-gray-400 text-black'>
+                    <select onChange={handleSelectChange} className='w-32 py-2 px-4 rounded-xl text-sm outline-0 bg-gray-700 hover:bg-gray-800 focus:ring-black focus:ring-1 rounded-md text-gray-400'>
                         <option value="Deposit">Deposit</option>
                         <option value="Withdraw">Withdraw</option>
                     </select>
                     <input 
                         placeholder='$' 
-                        className='p-2 w-44 text-sm font-bold outline-0 border-2 bg-green-50 focus:bg-green-200 border-black focus:ring-black focus:ring-1 rounded-md placeholder:text-gray-400 text-black'
+                        className='p-2 w-44 text-sm w-full bg-gray-700 py-1 px-3 rounded-xl font-bold outline-0 focus:bg-gray-800 placeholder:text-gray-400 text-black'
                         value={inputValue}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className='flex justify-center'>
-                    <button className='border-2 w-24 text-base py-1 font-bold border-black rounded hover:bg-black hover:text-white bg-gray-100 justify-center transition duration-300 ease-in-out'>Submit</button>
+                    <button className='bg-secondary-400 hover:bg-secondary-500 py-2 px-4 rounded-xl'>Submit</button>
                 </div>
         </form>
         <div className='font-bold text-lg'>
