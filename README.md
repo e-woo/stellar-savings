@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+<h1 align="center">
+  Stellar Savings
+</h1>
+<p align="center">
+  The first iteration of Stellar Savings, a personal finance web application designed for children, with a focus on financial literacy and education.
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🛠 Setup
 
-Currently, two official plugins are available:
+1. Clone the repository using one of the following methods.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    HTTPS:
+     ```bash
+     git clone https://github.com/e-woo/stellar-savings.git
+     ```
 
-## Expanding the ESLint configuration
+   SSH (requires SSH keys set up on your GitHub account):
+     ```bash
+     git clone git@github.com:e-woo/stellar-savings.git
+     ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   GitHub CLI (requires installation):
+     ```bash
+     gh repo clone e-woo/stellar-savings
+     ```
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+2. Install the required dependencies using npm.
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. If needed, install the required TypeScript types for React.
+```bash
+npm install --dev @types/react
+```
+
+4. Start the development server.
+```bash
+npm run dev
+```
+
+## 🚀 Build and run for production
+
+1. Generate a full static production build.
+```bash
+npm run build
+```
