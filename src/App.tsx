@@ -5,6 +5,9 @@ import Tree from './components/Tree';
 import TipBox from './components/TipBox';
 import './App.css';
 import SpaceVideo from './assets/Space Flight Loop.mp4';
+import Planet1 from './components/Planet1';
+import Planet2 from './components/Planet2';
+import Planet3 from './components/Planet3';
 
 function App() {
   return (
@@ -30,6 +33,17 @@ function App() {
             <div><Transactions /></div>
           </div>
         </div>
+      </div>
+
+      {/* Planets (absolute positioned) */}
+      <div className='absolute top-[20vh] left-[63vw]'>
+        <Planet1 />
+      </div>
+      <div className='absolute top-[40vh] left-[30vw]'>
+        <Planet2 />
+      </div>
+      <div className='absolute top-[63vh] left-[54vw]'>
+        <Planet3 />
       </div>
     </>
   );
