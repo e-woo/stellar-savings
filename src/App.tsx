@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div className='grid grid-cols-14 grid-flow-col h-[100vh] bg-gray-900 text-white'>
+      <div className='grid grid-cols-14 grid-flow-col h-[100vh] bg-gray-900 text-white overflow-hidden overscroll-none'>
         <div className='col-span-4 w-0 min-w-full'>
           <Goals/>
         </div>
