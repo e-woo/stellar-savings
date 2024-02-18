@@ -16,7 +16,7 @@ function App() {
         </div>
 
         <div className='col-span-6 w-0 min-w-full'>
-          <div className='absolute bottom-0 min-w-full'><TipBox></TipBox></div>
+          <div className=''><TipBox></TipBox></div>
         </div>
         
         <div className='col-span-4 w-0 min-w-full'>
