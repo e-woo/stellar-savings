@@ -52,7 +52,7 @@ const Transactions = () => {
         setContributionAmount(newContributionAmount);
         updateGoal(index, selected === 'Withdraw' ? -amount : amount);
         setTransactions(getTransactions());
-        
+        location.reload();
     };
 
     const [transactions, setTransactions] = useState(getTransactions());
